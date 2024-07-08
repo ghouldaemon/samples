@@ -1,0 +1,21 @@
+name: Prisma Cloud Security Scan
+on:
+  workflow_dispatch:
+
+jobs:
+  Prisma-Cloud-Scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      # Runs Checkov scan
+      - name: Code Application Security Scan 
+        id: prisma-cloud
+        uses: bridgecrewio/checkov-action@master
+        env:
+          PRISMA_API_URL: https://api0.prismacloud.io
+        with:
+          api-key: ${{ secrets.BC_API_KEY }}
+          file: xmls/pom.xml
+          output_format: cli
+          use_enforcement_rules: false
