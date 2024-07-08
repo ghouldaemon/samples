@@ -16,6 +16,6 @@ jobs:
           PRISMA_API_URL: https://api0.prismacloud.io
         with:
           api-key: ${{ secrets.BC_API_KEY }}
-          directory: ./
+          directory: ./HelloFX/
           output_format: cli
-          use_enforcement_rules: false
+          # use_enforcement_rules: false
