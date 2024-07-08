@@ -17,5 +17,5 @@ jobs:
         with:
           api-key: ${{ secrets.BC_API_KEY }}
           directory: ./HelloFX
-#          output_format: cli
+          output_format: json
           # use_enforcement_rules: false
